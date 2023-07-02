@@ -17,7 +17,6 @@ public class UserServiceImpl implements UserService {
 		
 		repo.save(user); // saving into the rdbms
 		
-		
 	}
 
 }

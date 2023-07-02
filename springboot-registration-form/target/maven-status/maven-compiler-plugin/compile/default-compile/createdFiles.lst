@@ -1,6 +1,0 @@
-com\springbootregistrationform\controller\UserController.class
-com\springbootregistrationform\repository\UserRepository.class
-com\springbootregistrationform\entity\User.class
-com\springbootregistrationform\service\UserService.class
-com\springbootregistrationform\service\UserServiceImpl.class
-com\springbootregistrationform\SpringbootRegistrationFormApplication.class
