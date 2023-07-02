@@ -18,10 +18,12 @@ public class UserController {
 		return "register";
 		
 	}
+	//What i will be receiving 
 	@PostMapping("/registerUser")
 	public String registerUser(@ModelAttribute("user") User user) 
 	{
 		System.out.println(user);
+		 // Redirect to the home page
 		return "home";
 	}
 }

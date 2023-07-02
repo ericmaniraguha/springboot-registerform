@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns="https://www.thymeleaf.org/">
   <head>
     <meta charset="utf-8">
@@ -19,12 +19,6 @@
         background-color: #ffffff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-
-      .home-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-      }
     </style>
 
     <title>Register</title>
@@ -32,30 +26,30 @@
   <body>
     <div class="container">
       <h1 class="text-danger">User Registration Form</h1>
-      <form action="/registerUser" method="post">
+      <form th:action = "@{registerUser}" th:object="${user}" method="post" th:redirect="home.html">
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" th:field="*{name}" class="form-control" id="name" name="name" placeholder="Name" required>
         </div>
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" name="username" required>
+          <input type="text" th:field="*{username}" class="form-control" id="username" name="username" placeholder="Username"  required>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" required>
+          <input type="email"th:field="*{email}"  class="form-control" id="email" name="email" placeholder="Email"  required>
         </div>
         <div class="mb-3">
           <label for="phone" class="form-label">Phone</label>
-          <input type="tel" class="form-control" id="phone" name="phone" required>
+          <input type="tel" th:field="*{phone}" class="form-control" id="phone" name="phone" placeholder="Phone" required>
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" name="password" required>
+          <label for="password"  class="form-label">Password</label>
+          <input type="password" th:field="*{password}" class="form-control" id="password" name="password" placeholder="********"  required>
         </div>
         <div class="mb-3">
           <label for="cpassword" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" id="cpassword" name="cpassword" required>
+          <input type="password" th:field="*{cpassword}" class="form-control" id="cpassword" name="cpassword" placeholder="********" required>
         </div>
         <div class="mb-3">
           <label for="gender" class="form-label">Gender</label>
@@ -66,8 +60,10 @@
             <option value="other">Other</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit"  class="btn btn-primary">Submit</button>
       </form>
+      
     </div>
   </body>
+  
 </html>
